@@ -11,9 +11,9 @@ volumes: [
   hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
 ]) {
   node('masternode') {
-    
+    sh """
     echo "this is working ################################################### PIPELINE RUNNING ###################################################"
-    
+    """
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
     def gitBranch = myRepo.GIT_BRANCH
